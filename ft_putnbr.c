@@ -1,4 +1,16 @@
-#include "libftprintf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/10 17:41:34 by omartine          #+#    #+#             */
+/*   Updated: 2021/11/10 20:03:14 by omartine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
 
 static void	ft_aux(long n, int j, char *aux)
 {
@@ -35,15 +47,19 @@ static char	*ft_itoa(int n)
 	return (aux);
 }
 
-void ft_putnbr(int num, int flg)
+int	ft_putnbr(int num, int flg)
 {
-	char *str;
+	char	*str;
+	int		count;
 
+	count = 0;
 	if (flg == 1)
-    {
-        if (num < 0)
-            num *= -1;
-    }
-    str = ft_itoa(num);
-	ft_putstr(str);
+	{
+		if (num < 0)
+			num *= -1;
+	}
+	str = ft_itoa(num);
+	count = ft_putstr(str);
+	free(str);
+	return (count);
 }

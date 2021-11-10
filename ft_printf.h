@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:41:30 by omartine          #+#    #+#             */
-/*   Updated: 2021/11/10 19:51:38 by omartine         ###   ########.fr       */
+/*   Created: 2021/11/10 17:41:24 by omartine          #+#    #+#             */
+/*   Updated: 2021/11/10 20:32:13 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_putstr(char *str)
-{
-	int	i;
+# include <stdio.h>
+# include <unistd.h>
+# include <stdarg.h>
+# include <stdlib.h>
 
-	if (!str)
-	{
-		write(1, &"(null)", 6);
-		return (6);
-	}
-	i = 0;
-	while (str[i] != 0)
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
-}
+int		ft_printf(const char *str, ...);
+
+int		ft_putnbr(int num, int flg);
+
+int		ft_putstr(char *str);
+
+int		ft_strlen(char *str);
+
+int		ft_putchar(char letter);
+
+int		ft_hexa(long num, int flg);
+
+#endif
