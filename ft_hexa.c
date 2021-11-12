@@ -6,13 +6,13 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:11:36 by omartine          #+#    #+#             */
-/*   Updated: 2021/11/10 20:34:33 by omartine         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:59:45 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	to_char(int num, int flg)
+static char	to_char(long num, int flg)
 {
 	char	hexa;
 
@@ -28,7 +28,7 @@ static char	to_char(int num, int flg)
 	return (hexa);
 }
 
-static int	count_chars(int num)
+static int	count_chars(long num)
 {
 	int	i;
 
@@ -41,43 +41,17 @@ static int	count_chars(int num)
 	return (i);
 }
 
-static int negative(long long int num)
-{
-	num = 4294967295 - num;
-	return (num);
-}
-
-static int extras(long long int num)
-{
-	int	i;
-
-	i = 0;
-	if (num == 9223372036854775807)
-	{
-		i = ft_strlen("9223372036854775807");
-		write(1, &"9223372036854775807", i);
-		return (i);
-	}
-	else
-	{
-		i = ft_strlen("-9223372036854775807");
-		write(1, &"-9223372036854775807", i);
-		return (i);
-	}
-	return (0);
-}
-
-int	ft_hexa(long long int num, int flg)
+int	ft_hexa(long num, int flg)
 {
 	int		count;
 	char	*str;
 	int		i;
 
 	i = 0;
+	if (num == 0)
+		return (ft_putchar('0'));
 	if (num < 0)
-		num = negative(num);
-	if (num == 9223372036854775807 || num == -9223372036854775807)
-		return (extras(num));
+		num = 4294967296 - (num * -1);
 	count = count_chars(num);
 	str = (char *) malloc(sizeof(char) * count + 1);
 	if (!str)
@@ -99,9 +73,10 @@ int	ft_hexa(long long int num, int flg)
 	free(str);
 	return (count);
 }
-
-int main(void)
+/*
+int	main(void)
 {
-	ft_hexa(922337203, 1);
+	ft_hexa(-1, 1);
+	printf("\n%X", -1);
 	return 0;
-}
+}*/

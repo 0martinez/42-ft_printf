@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:41:41 by omartine          #+#    #+#             */
-/*   Updated: 2021/11/10 20:32:17 by omartine         ###   ########.fr       */
+/*   Updated: 2021/11/12 19:02:32 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	dictionary(char c1, va_list ptr)
 	else if (c1 == 'd' || c1 == 'i')
 		count = ft_putnbr(va_arg(ptr, int), 0);
 	else if (c1 == 'u')
-		count = ft_putnbr(va_arg(ptr, int), 1);
+		count = ft_putnbr(va_arg(ptr, unsigned int), 1);
 	else if (c1 == 'x')
 		count = ft_hexa(va_arg(ptr, long), 0);
 	else if (c1 == 'X')
@@ -62,7 +62,7 @@ int	ft_printf(const char *str, ...)
 	va_end(ptr);
 	return (count);
 }
-
+/*
 int	main(void)
 {
 	int i = 0;
@@ -73,4 +73,4 @@ int	main(void)
 	j = printf("%c---%s---%d---%i---%u---%x---%X---%%---%d", 'a', "kakakaka", 22, 42, 42, 1 * -1, 1234, 22);
 	printf("  +++%d+++", j);
 	return 0;
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:41:24 by omartine          #+#    #+#             */
-/*   Updated: 2021/11/10 20:32:13 by omartine         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:50:47 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int		ft_strlen(char *str);
 
 int		ft_putchar(char letter);
 
-int		ft_hexa(long long int num, int flg);
+int		ft_hexa(long num, int flg);
 
 #endif
