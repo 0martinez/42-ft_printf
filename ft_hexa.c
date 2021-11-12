@@ -41,7 +41,33 @@ static int	count_chars(int num)
 	return (i);
 }
 
-int	ft_hexa(long num, int flg)
+static int negative(long long int num)
+{
+	num = 4294967295 - num;
+	return (num);
+}
+
+static int extras(long long int num)
+{
+	int	i;
+
+	i = 0;
+	if (num == 9223372036854775807)
+	{
+		i = ft_strlen("9223372036854775807");
+		write(1, &"9223372036854775807", i);
+		return (i);
+	}
+	else
+	{
+		i = ft_strlen("-9223372036854775807");
+		write(1, &"-9223372036854775807", i);
+		return (i);
+	}
+	return (0);
+}
+
+int	ft_hexa(long long int num, int flg)
 {
 	int		count;
 	char	*str;
@@ -49,7 +75,9 @@ int	ft_hexa(long num, int flg)
 
 	i = 0;
 	if (num < 0)
-		num = num * -1;
+		num = negative(num);
+	if (num == 9223372036854775807 || num == -9223372036854775807)
+		return (extras(num));
 	count = count_chars(num);
 	str = (char *) malloc(sizeof(char) * count + 1);
 	if (!str)
@@ -71,9 +99,9 @@ int	ft_hexa(long num, int flg)
 	free(str);
 	return (count);
 }
-/*
+
 int main(void)
 {
-	ft_hexa(1234, 1);
+	ft_hexa(922337203, 1);
 	return 0;
-}*/
+}

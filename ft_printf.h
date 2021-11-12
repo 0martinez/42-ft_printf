@@ -28,6 +28,6 @@ int		ft_strlen(char *str);
 
 int		ft_putchar(char letter);
 
-int		ft_hexa(long num, int flg);
+int		ft_hexa(long long int num, int flg);
 
 #endif
