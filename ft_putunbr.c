@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:41:34 by omartine          #+#    #+#             */
-/*   Updated: 2021/11/15 19:26:07 by omartine         ###   ########.fr       */
+/*   Created: 2021/11/15 18:06:52 by omartine          #+#    #+#             */
+/*   Updated: 2021/11/15 18:38:41 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	ft_aux(long n, int j, char *aux)
 	}
 }
 
-static char	*ft_itoa(int n)
+static char	*ft_itoa(unsigned long long n)
 {
 	char	*aux;
 	long	i;
@@ -47,7 +47,7 @@ static char	*ft_itoa(int n)
 	return (aux);
 }
 
-int	ft_putnbr(int num)
+int	ft_putunbr(unsigned long long num)
 {
 	char	*str;
 	int		count;

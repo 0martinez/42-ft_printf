@@ -6,13 +6,13 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:11:36 by omartine          #+#    #+#             */
-/*   Updated: 2021/11/12 18:59:45 by omartine         ###   ########.fr       */
+/*   Updated: 2021/11/15 20:02:52 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	to_char(long num, int flg)
+static char	to_char(unsigned long long num, int flg)
 {
 	char	hexa;
 
@@ -28,7 +28,7 @@ static char	to_char(long num, int flg)
 	return (hexa);
 }
 
-static int	count_chars(long num)
+static int	count_chars(unsigned long long num)
 {
 	int	i;
 
@@ -41,7 +41,18 @@ static int	count_chars(long num)
 	return (i);
 }
 
-int	ft_hexa(long num, int flg)
+static int	run_reverse(int count, char *str)
+{
+	count--;
+	while (count >= 0)
+	{
+		write(1, &str[count], 1);
+		count--;
+	}
+	return (ft_strlen(str));
+}
+
+int	ft_hexa(unsigned long long num, int flg)
 {
 	int		count;
 	char	*str;
@@ -50,8 +61,6 @@ int	ft_hexa(long num, int flg)
 	i = 0;
 	if (num == 0)
 		return (ft_putchar('0'));
-	if (num < 0)
-		num = 4294967296 - (num * -1);
 	count = count_chars(num);
 	str = (char *) malloc(sizeof(char) * count + 1);
 	if (!str)
@@ -63,13 +72,7 @@ int	ft_hexa(long num, int flg)
 		num = num / 16;
 		i++;
 	}
-	count--;
-	while (count >= 0)
-	{
-		write(1, &str[count], 1);
-		count--;
-	}
-	count = ft_strlen(str);
+	count = run_reverse(count, str);
 	free(str);
 	return (count);
 }

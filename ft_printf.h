@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:41:24 by omartine          #+#    #+#             */
-/*   Updated: 2021/11/12 18:50:47 by omartine         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:44:39 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 
 int		ft_printf(const char *str, ...);
 
-int		ft_putnbr(int num, int flg);
+int		ft_putnbr(int num);
+
+int		ft_putunbr(unsigned long long num);
 
 int		ft_putstr(char *str);
 
@@ -28,6 +30,6 @@ int		ft_strlen(char *str);
 
 int		ft_putchar(char letter);
 
-int		ft_hexa(long num, int flg);
+int		ft_hexa(unsigned long long num, int flg);
 
 #endif
