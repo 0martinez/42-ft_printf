@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:06:52 by omartine          #+#    #+#             */
-/*   Updated: 2021/11/15 18:38:41 by omartine         ###   ########.fr       */
+/*   Updated: 2021/11/15 20:10:10 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,3 @@ int	ft_putunbr(unsigned long long num)
 	free(str);
 	return (count);
 }
-/*
-int	main(void)
-{
-	ft_printf("%u", -1);
-	printf("\n%u", -1);
-	return 0;
-}*/

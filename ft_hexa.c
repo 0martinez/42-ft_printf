@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:11:36 by omartine          #+#    #+#             */
-/*   Updated: 2021/11/15 20:02:52 by omartine         ###   ########.fr       */
+/*   Updated: 2021/11/15 20:10:25 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,3 @@ int	ft_hexa(unsigned long long num, int flg)
 	free(str);
 	return (count);
 }
-/*
-int	main(void)
-{
-	ft_hexa(-1, 1);
-	printf("\n%X", -1);
-	return 0;
-}*/
