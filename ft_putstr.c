@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:41:30 by omartine          #+#    #+#             */
-/*   Updated: 2021/11/10 19:51:38 by omartine         ###   ########.fr       */
+/*   Updated: 2021/12/13 17:21:54 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putstr(char *str)
 
 	if (!str)
 	{
-		write(1, &"(null)", 6);
+		write(1, "(null)", 6);
 		return (6);
 	}
 	i = 0;

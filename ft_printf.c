@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:41:41 by omartine          #+#    #+#             */
-/*   Updated: 2021/11/15 19:54:14 by omartine         ###   ########.fr       */
+/*   Updated: 2021/12/13 17:44:12 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
+			if (str[i] == ' ' || str[i] == 0)
+				return (0);
 			count += dictionary(str[i], ptr);
 		}
 		else
@@ -65,3 +67,10 @@ int	ft_printf(const char *str, ...)
 	va_end(ptr);
 	return (count);
 }
+/*
+int main()
+{
+	//printf("%s%", "hola");
+	ft_printf("%s%", "hola");
+	return 0;
+}*/
