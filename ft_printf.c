@@ -6,7 +6,7 @@
 /*   By: omartine <omartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:41:41 by omartine          #+#    #+#             */
-/*   Updated: 2021/12/13 17:44:12 by omartine         ###   ########.fr       */
+/*   Updated: 2021/12/13 19:19:36 by omartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ int	ft_printf(const char *str, ...)
 	va_end(ptr);
 	return (count);
 }
-/*
+
 int main()
 {
 	//printf("%s%", "hola");
-	ft_printf("%s%", "hola");
+	ft_printf("%s    %a  ", "hola");
 	return 0;
-}*/
+}
